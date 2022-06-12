@@ -12,4 +12,7 @@ const setLocalTime = throttle(function(data) {
 
 player.on('timeupdate', setLocalTime)
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+if(localStorage.getItem('videoplayer-current-time')) {
+	player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+}
+
