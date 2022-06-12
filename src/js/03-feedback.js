@@ -12,9 +12,11 @@ let formData = {
 
 const localFormData = JSON.parse(localStorage.getItem("feedback-form-state"));
 
-formData = localFormData
-refs.email.value = localFormData.email
-refs.message.value = localFormData.message
+if(localFormData !== null) {
+	formData = localFormData
+	refs.email.value = localFormData.email
+	refs.message.value = localFormData.message
+}
 
 refs.form.addEventListener('input', onInputChange)
 refs.form.addEventListener('submit', onBtnSubmit)
